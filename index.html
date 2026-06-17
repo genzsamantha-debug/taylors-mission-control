@@ -244,7 +244,6 @@
     <div id="sync-status"><span class="sync-dot offline" id="sync-dot"></span><span id="sync-msg">Not connected</span></div>
     <div class="sync-actions">
       <span style="font-size:0.72rem;color:var(--text-dim);" id="last-sync-time"></span>
-      <button class="btn btn-dim btn-sm" onclick="showSetup()">⚙ Sync setup</button>
     </div>
   </div>
 
@@ -721,7 +720,7 @@ function renderTasks(){
   const rEl=document.getElementById('rings');
   rEl.innerHTML='';
   cats.forEach(cat=>{
-    const tasks=S.tasks.filter(t=>t.cat===cat);
+    const tasks=(S.tasks||[]).filter(t=>t.cat===cat);
     const dc=tasks.filter(t=>done.includes(t.id)).length;
     const total=tasks.length;
     const pct=total?dc/total:0;
@@ -738,7 +737,7 @@ function renderTasks(){
   const cEl=document.getElementById('cats');
   cEl.innerHTML='';
   cats.forEach(cat=>{
-    const tasks=S.tasks.filter(t=>t.cat===cat);
+    const tasks=(S.tasks||[]).filter(t=>t.cat===cat);
     const dc=tasks.filter(t=>done.includes(t.id)).length;
     const meta=CAT[cat];
     const block=document.createElement('div');
@@ -808,7 +807,7 @@ function renderManage(){
   const el=document.getElementById('manage-cats');
   el.innerHTML='';
   Object.keys(CAT).forEach(cat=>{
-    const tasks=S.tasks.filter(t=>t.cat===cat);
+    const tasks=(S.tasks||[]).filter(t=>t.cat===cat);
     const meta=CAT[cat];
     const panel=document.createElement('div');
     panel.className='manage-panel';
