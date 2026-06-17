@@ -586,19 +586,22 @@ function checkBadges(){
 
 // ── ACTIONS ────────────────────────────────────────────────────
 function completeTask(taskId,el){
-  const task=S.tasks.find(t=>t.id===taskId);
+  const task=(S.tasks||[]).find(t=>t.id===taskId);
   if(!task) return;
+  S.doneTasks=S.doneTasks||{};
+  S.catCounts=S.catCounts||{};
+  S.log=S.log||[];
   const done=todayDone();
   const wasDone=done.includes(taskId);
   if(wasDone){
     S.doneTasks[today()]=done.filter(id=>id!==taskId);
-    S.totalXp=Math.max(0,S.totalXp-task.pts);
-    S.spendablePoints=Math.max(0,S.spendablePoints-task.pts);
-    S.totalCompleted=Math.max(0,S.totalCompleted-1);
+    S.totalXp=Math.max(0,(S.totalXp||0)-task.pts);
+    S.spendablePoints=Math.max(0,(S.spendablePoints||0)-task.pts);
+    S.totalCompleted=Math.max(0,(S.totalCompleted||0)-1);
     S.catCounts[task.cat]=Math.max(0,(S.catCounts[task.cat]||0)-1);
     toast('↩ Undone','Mission unchecked','info');
   }else{
-    if(!S.doneTasks[today()]) S.doneTasks[today()]=[];
+    S.doneTasks[today()]=S.doneTasks[today()]||[];
     S.doneTasks[today()].push(taskId);
     S.totalXp+=task.pts;
     S.spendablePoints+=task.pts;
