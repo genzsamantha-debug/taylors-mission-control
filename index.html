@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ð Mission Control â Taylor's Quest Board</title>
+<title>🚀 Mission Control – Taylor's Quest Board</title>
 <style>
   :root {
     --bg:#050b1a;--surface:#0d1b35;--surface2:#132040;--border:#1e3a5f;
@@ -12,6 +12,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;overflow-x:hidden;}
+  input,select,textarea,button{font-family:inherit;}
 
   /* STARS */
   #stars{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;}
@@ -196,16 +197,16 @@
 <!-- SETUP MODAL -->
 <div class="modal-bg" id="setup-modal" style="display:none;">
   <div class="modal">
-    <h2>ð¸ Connect Sync</h2>
+    <h2>🛸 Connect Sync</h2>
     <p>Sync Taylor's board across both your phones using a free Firebase database. One-time setup, takes about 3 minutes.</p>
 
     <div class="setup-step"><span class="step-num">1</span>Go to <a href="https://console.firebase.google.com" target="_blank">console.firebase.google.com</a> and sign in with your Google account.</div>
     <div class="setup-step"><span class="step-num">2</span>Click <strong>"Create a project"</strong>, give it any name (e.g. "taylors-missions"), skip Google Analytics, click <strong>Create project</strong>.</div>
-    <div class="setup-step"><span class="step-num">3</span>In the left sidebar, click <strong>Build â Realtime Database</strong>. Click <strong>"Create Database"</strong>, choose your region, select <strong>"Start in test mode"</strong>, click <strong>Enable</strong>.</div>
-    <div class="setup-step"><span class="step-num">4</span>Copy the database URL shown at the top â it looks like:<br><code style="color:var(--cyan);font-size:0.78rem;">https://taylors-missions-default-rtdb.firebaseio.com</code></div>
+    <div class="setup-step"><span class="step-num">3</span>In the left sidebar, click <strong>Build → Realtime Database</strong>. Click <strong>"Create Database"</strong>, choose your region, select <strong>"Start in test mode"</strong>, click <strong>Enable</strong>.</div>
+    <div class="setup-step"><span class="step-num">4</span>Copy the database URL shown at the top — it looks like:<br><code style="color:var(--cyan);font-size:0.78rem;">https://taylors-missions-default-rtdb.firebaseio.com</code></div>
 
-    <input type="text" id="firebase-url-input" placeholder="Paste your Firebase Database URL hereâ¦" />
-    <button class="btn btn-cyan" style="width:100%;" onclick="saveFirebaseUrl()">Connect &amp; Sync ð</button>
+    <input type="text" id="firebase-url-input" placeholder="Paste your Firebase Database URL here…" />
+    <button class="btn btn-cyan" style="width:100%;" onclick="saveFirebaseUrl()">Connect &amp; Sync 🚀</button>
     <div class="modal-note">
       Taylor needs to open the same URL on his phone once, then paste the same Firebase URL. After that, both devices stay in sync automatically. You can also tap "Skip" to use the app without sync.
       <br><br>
@@ -220,19 +221,19 @@
   <div class="header">
     <div class="header-top">
       <div class="title-block">
-        <h1>ð <span>Mission Control</span></h1>
-        <p>Taylor's Quest Board Â· Earn XP Â· Claim Rewards</p>
+        <h1>🚀 <span>Mission Control</span></h1>
+        <p>Taylor's Quest Board · Earn XP · Claim Rewards</p>
       </div>
       <div class="rank-badge" id="rank-badge">Space Cadet</div>
     </div>
     <div class="stats-row">
-      <div class="stat-pill">â¡ <span class="val cyan" id="total-xp">0</span> XP</div>
-      <div class="stat-pill">ð¥ <span class="val orange" id="streak-count">0</span> day streak</div>
-      <div class="stat-pill">â­ <span class="val yellow" id="pts-balance">0</span> pts</div>
+      <div class="stat-pill">⚡ <span class="val cyan" id="total-xp">0</span> XP</div>
+      <div class="stat-pill">🔥 <span class="val orange" id="streak-count">0</span> day streak</div>
+      <div class="stat-pill">⭐ <span class="val yellow" id="pts-balance">0</span> pts</div>
     </div>
     <div class="xp-section">
       <div class="xp-label">
-        <span id="rank-label">Space Cadet â Mission Specialist</span>
+        <span id="rank-label">Space Cadet → Mission Specialist</span>
         <span id="xp-txt">0 / 200 XP</span>
       </div>
       <div class="xp-bar-wrap"><div class="xp-bar-fill" id="xp-bar" style="width:0%"></div></div>
@@ -248,15 +249,15 @@
   </div>
 
   <!-- ENCOURAGE -->
-  <div class="encourage-bar" id="encourage">"Every mission starts with a single step. You've got this, Commander! ð¸"</div>
+  <div class="encourage-bar" id="encourage">"Every mission starts with a single step. You've got this, Commander! 🛸"</div>
 
   <!-- TABS -->
   <div class="tabs">
-    <div class="tab active" onclick="switchTab('tasks')">ð¯ Missions</div>
-    <div class="tab" onclick="switchTab('rewards')">ð Rewards</div>
-    <div class="tab" onclick="switchTab('achievements')">ð Achievements</div>
-    <div class="tab" onclick="switchTab('manage')">âï¸ Manage</div>
-    <div class="tab" onclick="switchTab('log')">ð Log</div>
+    <div class="tab active" onclick="switchTab('tasks')">🎯 Missions</div>
+    <div class="tab" onclick="switchTab('rewards')">🎁 Rewards</div>
+    <div class="tab" onclick="switchTab('achievements')">🏆 Achievements</div>
+    <div class="tab" onclick="switchTab('manage')">⚙️ Manage</div>
+    <div class="tab" onclick="switchTab('log')">📋 Log</div>
   </div>
 
   <!-- MISSIONS -->
@@ -267,31 +268,31 @@
 
   <!-- REWARDS -->
   <div class="section" id="section-rewards">
-    <p class="section-title">ð Claim Your Rewards</p>
+    <p class="section-title">🎁 Claim Your Rewards</p>
     <p style="font-size:0.78rem;color:var(--text-dim);margin-bottom:12px;">You have <strong style="color:var(--yellow)" id="bal2">0</strong> pts to spend.</p>
     <div class="rewards-grid" id="rewards-grid"></div>
   </div>
 
   <!-- ACHIEVEMENTS -->
   <div class="section" id="section-achievements">
-    <p class="section-title">ð Mission Badges</p>
+    <p class="section-title">🏆 Mission Badges</p>
     <div class="badges-grid" id="badges-grid"></div>
     <div style="margin-top:20px;">
-      <p class="section-title">ð¥ Streak Calendar (Last 30 Days)</p>
+      <p class="section-title">🔥 Streak Calendar (Last 30 Days)</p>
       <div class="streak-grid" id="streak-grid"></div>
     </div>
   </div>
 
   <!-- MANAGE -->
   <div class="section" id="section-manage">
-    <p class="section-title">âï¸ Sam's Control Panel</p>
+    <p class="section-title">⚙️ Sam's Control Panel</p>
     <p style="font-size:0.78rem;color:var(--text-dim);margin-bottom:16px;">Add or remove tasks and rewards. Changes sync to Taylor's phone automatically.</p>
     <div id="manage-cats"></div>
     <div class="manage-panel" style="margin-top:4px;">
-      <h3>ð Rewards Shop</h3>
+      <h3>🎁 Rewards Shop</h3>
       <div id="manage-rewards"></div>
       <div class="add-form">
-        <input type="text" id="nr-name" placeholder="Reward nameâ¦" />
+        <input type="text" id="nr-name" placeholder="Reward name…" />
         <input type="text" id="nr-icon" placeholder="Emoji" style="width:55px;" />
         <input type="number" id="nr-cost" placeholder="Cost" value="100" style="width:72px;" />
         <button class="btn btn-cyan" onclick="addReward()">Add</button>
@@ -301,36 +302,36 @@
 
   <!-- LOG -->
   <div class="section" id="section-log">
-    <p class="section-title">ð Mission Log</p>
+    <p class="section-title">📋 Mission Log</p>
     <div id="log-list"></div>
   </div>
 
 </div><!-- /app -->
 
 <script>
-// ââ CONSTANTS ââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── CONSTANTS ──────────────────────────────────────────────────
 const RANKS=[
-  {name:'Space Cadet',min:0,max:200,emoji:'ð'},
-  {name:'Mission Specialist',min:200,max:500,emoji:'â­'},
-  {name:'Flight Lieutenant',min:500,max:1000,emoji:'ð¸'},
-  {name:'Commander',min:1000,max:2000,emoji:'ð'},
-  {name:'Captain',min:2000,max:3500,emoji:'ð'},
-  {name:'Admiral',min:3500,max:5000,emoji:'ðª'},
-  {name:'Galaxy Commander',min:5000,max:Infinity,emoji:'ð'},
+  {name:'Space Cadet',min:0,max:200,emoji:'🚀'},
+  {name:'Mission Specialist',min:200,max:500,emoji:'⭐'},
+  {name:'Flight Lieutenant',min:500,max:1000,emoji:'🛸'},
+  {name:'Commander',min:1000,max:2000,emoji:'🌙'},
+  {name:'Captain',min:2000,max:3500,emoji:'🌟'},
+  {name:'Admiral',min:3500,max:5000,emoji:'🪐'},
+  {name:'Galaxy Commander',min:5000,max:Infinity,emoji:'🌌'},
 ];
 const ENCOURAGE=[
-  "You're a legend, Taylor. Let's go! ð",
-  "One mission at a time. You've totally got this! â­",
-  "ADHD is a superpower â your focus when it hits is unstoppable! ð¥",
-  "Every checked box is a win. No task too small! â",
-  "Mission Control believes in you, Commander! ð¸",
-  "Progress over perfection. Keep going! ð¥",
-  "Sam sees you crushing it. Keep it up! ð",
-  "You're building momentum! Every task counts! â¡",
-  "Even astronauts do it one step at a time. ð",
-  "Just pick ONE mission and start. That's the whole secret. ð¯",
-  "Done is better than perfect! ð",
-  "Streak active! Don't break the chain! ð",
+  "You're a legend, Taylor. Let's go! 🚀",
+  "One mission at a time. You've totally got this! ⭐",
+  "ADHD is a superpower — your focus when it hits is unstoppable! 💥",
+  "Every checked box is a win. No task too small! ✅",
+  "Mission Control believes in you, Commander! 🛸",
+  "Progress over perfection. Keep going! 🔥",
+  "Sam sees you crushing it. Keep it up! 💙",
+  "You're building momentum! Every task counts! ⚡",
+  "Even astronauts do it one step at a time. 🌌",
+  "Just pick ONE mission and start. That's the whole secret. 🎯",
+  "Done is better than perfect! 🏆",
+  "Streak active! Don't break the chain! 🔗",
 ];
 const DEFAULT_TASKS=[
   {id:'t1',name:'Do the dishes',cat:'household',pts:25},
@@ -339,7 +340,7 @@ const DEFAULT_TASKS=[
   {id:'t4',name:'Do laundry',cat:'household',pts:40},
   {id:'t5',name:'Clean bathroom',cat:'household',pts:50},
   {id:'t6',name:'Wipe down counters',cat:'household',pts:20},
-  {id:'t7',name:'Take medication ð',cat:'health',pts:60},
+  {id:'t7',name:'Take medication 💊',cat:'health',pts:60},
   {id:'t8',name:'Exercise / work out',cat:'health',pts:60},
   {id:'t9',name:'Drink 8 glasses of water',cat:'health',pts:30},
   {id:'t10',name:'Get 7+ hours sleep',cat:'health',pts:40},
@@ -353,35 +354,35 @@ const DEFAULT_TASKS=[
   {id:'t18',name:'Clear email inbox',cat:'work',pts:35},
 ];
 const DEFAULT_REWARDS=[
-  {id:'r1',name:'Pick the movie tonight',icon:'ð¬',cost:100},
-  {id:'r2',name:'Sleep in Saturday',icon:'ð´',cost:150},
-  {id:'r3',name:'Skip a chore (free pass)',icon:'ðï¸',cost:200},
-  {id:'r4',name:'Backrub / massage',icon:'ð',cost:250},
-  {id:'r5',name:'Date night of your choice',icon:'ð',cost:300},
-  {id:'r6',name:'Weekend activity pick',icon:'ðï¸',cost:400},
+  {id:'r1',name:'Pick the movie tonight',icon:'🎬',cost:100},
+  {id:'r2',name:'Sleep in Saturday',icon:'😴',cost:150},
+  {id:'r3',name:'Skip a chore (free pass)',icon:'🎟️',cost:200},
+  {id:'r4',name:'Backrub / massage',icon:'💆',cost:250},
+  {id:'r5',name:'Date night of your choice',icon:'💕',cost:300},
+  {id:'r6',name:'Weekend activity pick',icon:'🏖️',cost:400},
 ];
 const BADGES=[
-  {id:'b1',icon:'ð',name:'First Mission',desc:'Complete first task',check:s=>s.totalCompleted>=1},
-  {id:'b2',icon:'ð¥',name:'Hot Streak',desc:'3-day streak',check:s=>s.streak>=3},
-  {id:'b3',icon:'â¡',name:'On Fire',desc:'7-day streak',check:s=>s.streak>=7},
-  {id:'b4',icon:'ð¯',name:'Centurion',desc:'100 XP earned',check:s=>s.totalXp>=100},
-  {id:'b5',icon:'â­',name:'Halfway Hero',desc:'500 XP earned',check:s=>s.totalXp>=500},
-  {id:'b6',icon:'ð',name:'Point King',desc:'1,000 XP earned',check:s=>s.totalXp>=1000},
-  {id:'b7',icon:'ð ',name:'Chore Champion',desc:'10 household tasks',check:s=>(s.catCounts.household||0)>=10},
-  {id:'b8',icon:'ðª',name:'Health Hero',desc:'10 health tasks',check:s=>(s.catCounts.health||0)>=10},
-  {id:'b9',icon:'ð',name:'Errand Eagle',desc:'10 errands',check:s=>(s.catCounts.errands||0)>=10},
-  {id:'b10',icon:'ð¼',name:'Work Warrior',desc:'10 work tasks',check:s=>(s.catCounts.work||0)>=10},
-  {id:'b11',icon:'ð',name:'First Reward',desc:'Redeem first reward',check:s=>s.rewardsClaimed>=1},
-  {id:'b12',icon:'ð',name:'Galaxy Brain',desc:'Reach Commander (1000 XP)',check:s=>s.totalXp>=1000},
+  {id:'b1',icon:'🚀',name:'First Mission',desc:'Complete first task',check:s=>s.totalCompleted>=1},
+  {id:'b2',icon:'🔥',name:'Hot Streak',desc:'3-day streak',check:s=>s.streak>=3},
+  {id:'b3',icon:'⚡',name:'On Fire',desc:'7-day streak',check:s=>s.streak>=7},
+  {id:'b4',icon:'💯',name:'Centurion',desc:'100 XP earned',check:s=>s.totalXp>=100},
+  {id:'b5',icon:'⭐',name:'Halfway Hero',desc:'500 XP earned',check:s=>s.totalXp>=500},
+  {id:'b6',icon:'🌟',name:'Point King',desc:'1,000 XP earned',check:s=>s.totalXp>=1000},
+  {id:'b7',icon:'🏠',name:'Chore Champion',desc:'10 household tasks',check:s=>(s.catCounts.household||0)>=10},
+  {id:'b8',icon:'💪',name:'Health Hero',desc:'10 health tasks',check:s=>(s.catCounts.health||0)>=10},
+  {id:'b9',icon:'📋',name:'Errand Eagle',desc:'10 errands',check:s=>(s.catCounts.errands||0)>=10},
+  {id:'b10',icon:'💼',name:'Work Warrior',desc:'10 work tasks',check:s=>(s.catCounts.work||0)>=10},
+  {id:'b11',icon:'🎁',name:'First Reward',desc:'Redeem first reward',check:s=>s.rewardsClaimed>=1},
+  {id:'b12',icon:'🌌',name:'Galaxy Brain',desc:'Reach Commander (1000 XP)',check:s=>s.totalXp>=1000},
 ];
 const CAT={
-  household:{label:'ð  Household',color:'#60a5fa'},
-  health:{label:'ðª Health',color:'#22c55e'},
-  errands:{label:'ð Errands',color:'#f97316'},
-  work:{label:'ð¼ Work',color:'#a855f7'},
+  household:{label:'🏠 Household',color:'#60a5fa'},
+  health:{label:'💪 Health',color:'#22c55e'},
+  errands:{label:'📋 Errands',color:'#f97316'},
+  work:{label:'💼 Work',color:'#a855f7'},
 };
 
-// ââ STATE ââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── STATE ──────────────────────────────────────────────────────
 function defaultState(){
   return {
     tasks:JSON.parse(JSON.stringify(DEFAULT_TASKS)),
@@ -398,7 +399,7 @@ let _syncTimer=null;
 let _pollTimer=null;
 let FIREBASE_URL=localStorage.getItem('mc_firebase_url')||'https://taylor-s-quest-board-default-rtdb.firebaseio.com';
 
-// ââ FIREBASE SYNC ââââââââââââââââââââââââââââââââââââââââââââââ
+// ── FIREBASE SYNC ──────────────────────────────────────────────
 function dbUrl(){return FIREBASE_URL.replace(/\/+$/,'')+'/mc_state.json';}
 
 function setSyncStatus(status,msg){
@@ -410,7 +411,7 @@ function setSyncStatus(status,msg){
 
 async function pushState(){
   if(!FIREBASE_URL){return;}
-  setSyncStatus('syncing','Syncingâ¦');
+  setSyncStatus('syncing','Syncing…');
   try{
     const res=await fetch(dbUrl(),{
       method:'PUT',
@@ -418,10 +419,10 @@ async function pushState(){
       body:JSON.stringify(S),
     });
     if(!res.ok) throw new Error('HTTP '+res.status);
-    setSyncStatus('synced','Synced â');
+    setSyncStatus('synced','Synced ✓');
     document.getElementById('last-sync-time').textContent=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
   }catch(e){
-    setSyncStatus('error','Sync failed â check connection');
+    setSyncStatus('error','Sync failed – check connection');
   }
 }
 
@@ -445,6 +446,15 @@ async function pullState(){
       const localStreakDays=S.streakDays;
       const localRewardsClaimed=S.rewardsClaimed;
       S=remote;
+      // Ensure required fields always exist
+      S.doneTasks=S.doneTasks||{};
+      S.tasks=S.tasks||[];
+      S.rewards=S.rewards||[];
+      S.streakDays=S.streakDays||[];
+      S.log=S.log||[];
+      S.catCounts=S.catCounts||{household:0,health:0,errands:0,work:0};
+      S.earnedBadges=S.earnedBadges||[];
+      S.rewardsClaimed=S.rewardsClaimed||[];
       // Preserve Taylor's progress if remote has less XP (Sam's device might not have completions)
       if(localXp>remote.totalXp){
         S.doneTasks=localDone;
@@ -459,7 +469,7 @@ async function pullState(){
         S.rewardsClaimed=localRewardsClaimed;
       }
       render();
-      setSyncStatus('synced','Updated â');
+      setSyncStatus('synced','Updated ✓');
       document.getElementById('last-sync-time').textContent='Updated '+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
     }
   }catch{/*silent*/}
@@ -487,14 +497,14 @@ async function initSync(){
     render();
     return;
   }
-  setSyncStatus('syncing','Connectingâ¦');
+  setSyncStatus('syncing','Connecting…');
   // Try to load from Firebase first
   try{
     const res=await fetch(dbUrl());
     if(res.ok){
       const remote=await res.json();
       if(remote&&remote.tasks) S=remote;
-      setSyncStatus('synced','Synced â');
+      setSyncStatus('synced','Synced ✓');
       document.getElementById('last-sync-time').textContent=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
     }
   }catch{
@@ -510,7 +520,7 @@ function saveLocalBackup(){
   try{localStorage.setItem('mc_state',JSON.stringify(S));}catch{}
 }
 
-// ââ SETUP MODAL ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── SETUP MODAL ────────────────────────────────────────────────
 function showSetup(){
   document.getElementById('setup-modal').style.display='flex';
 }
@@ -520,36 +530,36 @@ function hideSetup(){
 function skipSync(){
   localStorage.setItem('mc_sync_skipped','1');
   hideSetup();
-  toast('ð± Running offline','Changes only save on this device','info');
+  toast('📱 Running offline','Changes only save on this device','info');
 }
 async function saveFirebaseUrl(){
   let url=document.getElementById('firebase-url-input').value.trim();
-  if(!url){toast('â ï¸ Paste your Firebase URL first','','warn');return;}
+  if(!url){toast('⚠️ Paste your Firebase URL first','','warn');return;}
   if(!url.startsWith('http')) url='https://'+url;
   if(!url.includes('firebaseio.com')){
-    toast('â ï¸ That doesn\'t look right','URL should end in firebaseio.com','warn');return;
+    toast('⚠️ That doesn\'t look right','URL should end in firebaseio.com','warn');return;
   }
   // Test connection
-  setSyncStatus('syncing','Testing connectionâ¦');
+  setSyncStatus('syncing','Testing connection…');
   try{
     const res=await fetch(url.replace(/\/+$/,'')+'/mc_ping.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:'"ok"'});
     if(!res.ok) throw new Error('HTTP '+res.status);
   }catch(e){
     setSyncStatus('error','Can\'t connect');
-    toast('â ï¸ Connection failed','Make sure the database is in test mode and the URL is correct','warn');
+    toast('⚠️ Connection failed','Make sure the database is in test mode and the URL is correct','warn');
     return;
   }
   FIREBASE_URL=url;
   localStorage.setItem('mc_firebase_url',url);
   localStorage.removeItem('mc_sync_skipped');
   hideSetup();
-  toast('ð¸ Sync connected!','Both phones will now stay in sync','success');
-  setSyncStatus('synced','Connected â');
+  toast('🛸 Sync connected!','Both phones will now stay in sync','success');
+  setSyncStatus('synced','Connected ✓');
   pushState();
   startPolling();
 }
 
-// ââ HELPERS ââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── HELPERS ────────────────────────────────────────────────────
 function today(){return new Date().toLocaleDateString('en-CA');}
 function getRank(xp){return RANKS.find(r=>xp>=r.min&&xp<r.max)||RANKS[RANKS.length-1];}
 function todayDone(){return (S.doneTasks||{})[today()]||[];}
@@ -568,13 +578,13 @@ function checkBadges(){
   BADGES.forEach(b=>{
     if(!S.earnedBadges.includes(b.id)&&b.check(S)){
       S.earnedBadges.push(b.id);
-      setTimeout(()=>toast('ð Badge Unlocked!',b.icon+' '+b.name,'warn'),700);
+      setTimeout(()=>toast('🏆 Badge Unlocked!',b.icon+' '+b.name,'warn'),700);
       confetti();
     }
   });
 }
 
-// ââ ACTIONS ââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── ACTIONS ────────────────────────────────────────────────────
 function completeTask(taskId,el){
   const task=S.tasks.find(t=>t.id===taskId);
   if(!task) return;
@@ -586,7 +596,7 @@ function completeTask(taskId,el){
     S.spendablePoints=Math.max(0,S.spendablePoints-task.pts);
     S.totalCompleted=Math.max(0,S.totalCompleted-1);
     S.catCounts[task.cat]=Math.max(0,(S.catCounts[task.cat]||0)-1);
-    toast('â© Undone','Mission unchecked','info');
+    toast('↩ Undone','Mission unchecked','info');
   }else{
     if(!S.doneTasks[today()]) S.doneTasks[today()]=[];
     S.doneTasks[today()].push(taskId);
@@ -601,7 +611,7 @@ function completeTask(taskId,el){
     checkStreak();
     checkBadges();
     confetti();
-    toast('â Mission Complete!',task.name+' Â· +'+task.pts+' XP','success');
+    toast('✅ Mission Complete!',task.name+' · +'+task.pts+' XP','success');
   }
   saveLocalBackup();
   schedulePush();
@@ -613,13 +623,13 @@ function addTaskCat(cat){
   const ptsEl=document.getElementById('nt-pts-'+cat);
   const name=nameEl.value.trim();
   const pts=parseInt(ptsEl.value)||25;
-  if(!name){toast('â ï¸ Oops','Enter a mission name','warn');return;}
+  if(!name){toast('⚠️ Oops','Enter a mission name','warn');return;}
   S.tasks.push({id:'t_'+Date.now(),name,cat,pts});
   nameEl.value='';
   saveLocalBackup();
   schedulePush();
   render();
-  toast('ð Added',name+' syncing to Taylor\'s phoneâ¦','info');
+  toast('🚀 Added',name+' syncing to Taylor\'s phone…','info');
 }
 
 function addTaskManage(cat){
@@ -627,13 +637,13 @@ function addTaskManage(cat){
   const ptsEl=document.getElementById('mt-pts-'+cat);
   const name=nameEl.value.trim();
   const pts=parseInt(ptsEl.value)||25;
-  if(!name){toast('â ï¸ Oops','Enter a task name','warn');return;}
+  if(!name){toast('⚠️ Oops','Enter a task name','warn');return;}
   S.tasks.push({id:'t_'+Date.now(),name,cat,pts});
   nameEl.value='';
   saveLocalBackup();
   schedulePush();
   render();
-  toast('ð Added',name+' syncing to Taylor\'s phoneâ¦','info');
+  toast('🚀 Added',name+' syncing to Taylor\'s phone…','info');
 }
 
 function deleteTask(taskId){
@@ -642,21 +652,21 @@ function deleteTask(taskId){
   saveLocalBackup();
   schedulePush();
   render();
-  toast('ð Removed','Task removed and syncingâ¦','info');
+  toast('🗑 Removed','Task removed and syncing…','info');
 }
 
 function addReward(){
   const name=document.getElementById('nr-name').value.trim();
-  const icon=document.getElementById('nr-icon').value.trim()||'ð';
+  const icon=document.getElementById('nr-icon').value.trim()||'🎁';
   const cost=parseInt(document.getElementById('nr-cost').value)||100;
-  if(!name){toast('â ï¸ Oops','Enter a reward name','warn');return;}
+  if(!name){toast('⚠️ Oops','Enter a reward name','warn');return;}
   S.rewards.push({id:'r_'+Date.now(),name,icon,cost});
   document.getElementById('nr-name').value='';
   document.getElementById('nr-icon').value='';
   saveLocalBackup();
   schedulePush();
   render();
-  toast('ð Added',name+' added to shop','info');
+  toast('🎁 Added',name+' added to shop','info');
 }
 
 function deleteReward(id){
@@ -669,20 +679,20 @@ function deleteReward(id){
 function claimReward(id){
   const r=S.rewards.find(x=>x.id===id);
   if(!r) return;
-  if(S.spendablePoints<r.cost){toast('â ï¸ Need more XP',''+r.cost+' pts needed Â· you have '+S.spendablePoints,'warn');return;}
+  if(S.spendablePoints<r.cost){toast('⚠️ Need more XP',''+r.cost+' pts needed · you have '+S.spendablePoints,'warn');return;}
   if(!confirm('Claim "'+r.name+'" for '+r.cost+' pts?')) return;
   S.spendablePoints-=r.cost;
   S.rewardsClaimed++;
-  S.log.unshift({date:today(),name:'ð '+r.name,pts:-r.cost,cat:'reward'});
+  S.log.unshift({date:today(),name:'🎁 '+r.name,pts:-r.cost,cat:'reward'});
   saveLocalBackup();
   schedulePush();
   checkBadges();
   confetti();
-  toast('ð Claimed!',r.icon+' '+r.name+' is yours!','success');
+  toast('🎉 Claimed!',r.icon+' '+r.name+' is yours!','success');
   render();
 }
 
-// ââ RENDER ââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── RENDER ────────────────────────────────────────────────────
 function render(){
   renderHeader();
   renderTasks();
@@ -704,11 +714,11 @@ function renderHeader(){
     const pct=Math.min(100,((S.totalXp-rank.min)/(rank.max-rank.min))*100);
     document.getElementById('xp-bar').style.width=pct+'%';
     document.getElementById('xp-txt').textContent=S.totalXp+' / '+rank.max+' XP';
-    document.getElementById('rank-label').textContent=rank.name+' â '+next.name;
+    document.getElementById('rank-label').textContent=rank.name+' → '+next.name;
   }else{
     document.getElementById('xp-bar').style.width='100%';
-    document.getElementById('xp-txt').textContent='MAX RANK ð';
-    document.getElementById('rank-label').textContent='ð Galaxy Commander';
+    document.getElementById('xp-txt').textContent='MAX RANK 🌌';
+    document.getElementById('rank-label').textContent='🌌 Galaxy Commander';
   }
 }
 
@@ -745,7 +755,7 @@ function renderTasks(){
       <div class="dot" style="background:${meta.color};box-shadow:0 0 6px ${meta.color}"></div>
       <span class="cat-label">${meta.label}</span>
       <span class="cat-meta">${dc}/${tasks.length} done</span>
-      <span class="arrow">â¶</span>
+      <span class="arrow">▶</span>
     </div><div class="cat-body"></div>`;
     cEl.appendChild(block);
     const body=block.querySelector('.cat-body');
@@ -753,16 +763,16 @@ function renderTasks(){
       const isDone=done.includes(task.id);
       const row=document.createElement('div');
       row.className='task-row'+(isDone?' done':'');
-      row.innerHTML=`<div class="task-check">${isDone?'â':''}</div>
+      row.innerHTML=`<div class="task-check">${isDone?'✓':''}</div>
         <div class="task-info"><div class="task-name">${task.name}</div></div>
-        <div class="task-pts">${isDone?'â':'+'}${task.pts} XP</div>
-        <button class="del-btn" onclick="event.stopPropagation();deleteTask('${task.id}')" title="Remove">â</button>`;
+        <div class="task-pts">${isDone?'✓':'+'}${task.pts} XP</div>
+        <button class="del-btn" onclick="event.stopPropagation();deleteTask('${task.id}')" title="Remove">&#x2715;</button>`;
       row.onclick=()=>completeTask(task.id,row);
       body.appendChild(row);
     });
     const addRow=document.createElement('div');
     addRow.className='add-task-row';
-    addRow.innerHTML=`<input type="text" id="nt-name-${cat}" placeholder="Add missionâ¦" onkeydown="if(event.key==='Enter')addTaskCat('${cat}')"/>
+    addRow.innerHTML=`<input type="text" id="nt-name-${cat}" placeholder="Add mission…" onkeydown="if(event.key==='Enter')addTaskCat('${cat}')"/>
       <input type="number" id="nt-pts-${cat}" value="25" min="1" max="500"/>
       <button class="btn btn-cyan" onclick="addTaskCat('${cat}')">+ Add</button>`;
     body.appendChild(addRow);
@@ -774,7 +784,7 @@ function renderRewards(){
     const can=S.spendablePoints>=r.cost;
     return`<div class="reward-card"><div class="reward-icon">${r.icon}</div>
       <div class="reward-name">${r.name}</div>
-      <div class="reward-cost">â­ ${r.cost} pts</div>
+      <div class="reward-cost">⭐ ${r.cost} pts</div>
       <button class="btn ${can?'btn-cyan':'btn-dim'}" onclick="claimReward('${r.id}')">${can?'Claim!':'Need more XP'}</button>
     </div>`;
   }).join('');
@@ -787,7 +797,7 @@ function renderAchievements(){
       <div class="badge-icon">${b.icon}</div>
       <div class="badge-name">${b.name}</div>
       <div class="badge-desc">${b.desc}</div>
-      ${e?'<div style="color:var(--yellow);font-size:0.68rem;margin-top:5px;">â Earned!</div>':''}
+      ${e?'<div style="color:var(--yellow);font-size:0.68rem;margin-top:5px;">✓ Earned!</div>':''}
     </div>`;
   }).join('');
   const sg=document.getElementById('streak-grid');
@@ -813,11 +823,11 @@ function renderManage(){
     panel.innerHTML=`<h3>${meta.label}</h3>
       ${tasks.map(task=>`<div class="manage-row">
         <span>${task.name}</span>
-        <span style="color:var(--yellow);font-size:0.75rem;white-space:nowrap;">â­ ${task.pts} XP</span>
+        <span style="color:var(--yellow);font-size:0.75rem;white-space:nowrap;">⭐ ${task.pts} XP</span>
         <button class="btn btn-red btn-sm" onclick="deleteTask('${task.id}')">Remove</button>
       </div>`).join('')}
       <div class="add-form">
-        <input type="text" id="mt-name-${cat}" placeholder="New taskâ¦" onkeydown="if(event.key==='Enter')addTaskManage('${cat}')"/>
+        <input type="text" id="mt-name-${cat}" placeholder="New task…" onkeydown="if(event.key==='Enter')addTaskManage('${cat}')"/>
         <input type="number" id="mt-pts-${cat}" value="25" min="1" max="500"/>
         <button class="btn btn-cyan" onclick="addTaskManage('${cat}')">+ Add</button>
       </div>`;
@@ -826,7 +836,7 @@ function renderManage(){
   document.getElementById('manage-rewards').innerHTML=S.rewards.map(r=>`
     <div class="manage-row">
       <span>${r.icon} ${r.name}</span>
-      <span style="color:var(--yellow);font-size:0.75rem;white-space:nowrap;">â­ ${r.cost} pts</span>
+      <span style="color:var(--yellow);font-size:0.75rem;white-space:nowrap;">⭐ ${r.cost} pts</span>
       <button class="btn btn-red btn-sm" onclick="deleteReward('${r.id}')">Remove</button>
     </div>`).join('');
 }
@@ -836,12 +846,12 @@ function renderLog(){
   if(!S.log.length){el.innerHTML='<div style="text-align:center;color:var(--text-dim);padding:24px;font-size:0.85rem;">No missions logged yet.</div>';return;}
   el.innerHTML=S.log.slice(0,50).map(l=>`
     <div class="log-item">
-      <div><div style="font-weight:600;">${l.name}</div><div style="font-size:0.72rem;color:var(--text-dim);">${l.date} Â· ${l.cat}</div></div>
+      <div><div style="font-weight:600;">${l.name}</div><div style="font-size:0.72rem;color:var(--text-dim);">${l.date} · ${l.cat}</div></div>
       <div class="log-pts">${l.pts>0?'+':''}${l.pts} XP</div>
     </div>`).join('');
 }
 
-// ââ UI ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── UI ────────────────────────────────────────────────────────
 function switchTab(name){
   document.querySelectorAll('.tab').forEach((t,i)=>{
     t.classList.toggle('active',['tasks','rewards','achievements','manage','log'][i]===name);
@@ -897,14 +907,14 @@ function checkReminders(){
   const done=todayDone();
   const med=S.tasks.find(t=>t.name.toLowerCase().includes('medication'));
   if(med&&!done.includes(med.id)&&new Date().getHours()>=8)
-    setTimeout(()=>toast('ð Reminder!','Don\'t forget your medication today!','warn'),2000);
+    setTimeout(()=>toast('💊 Reminder!','Don\'t forget your medication today!','warn'),2000);
   if(!done.length)
-    setTimeout(()=>toast('ð Ready for launch!','Pick ONE mission and let\'s go, Commander!','info'),1500);
+    setTimeout(()=>toast('🚀 Ready for launch!','Pick ONE mission and let\'s go, Commander!','info'),1500);
   else if(done.length>=3)
-    setTimeout(()=>toast('ð¥ Crushing it!',done.length+' missions done today!','success'),1500);
+    setTimeout(()=>toast('🔥 Crushing it!',done.length+' missions done today!','success'),1500);
 }
 
-// ââ INIT ââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── INIT ──────────────────────────────────────────────────────
 createStars();
 initSync().then(()=>checkReminders());
 setInterval(showEncourage,120000);
