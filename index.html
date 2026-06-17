@@ -552,7 +552,7 @@ async function saveFirebaseUrl(){
 // ── HELPERS ────────────────────────────────────────────────────
 function today(){return new Date().toLocaleDateString('en-CA');}
 function getRank(xp){return RANKS.find(r=>xp>=r.min&&xp<r.max)||RANKS[RANKS.length-1];}
-function todayDone(){return S.doneTasks[today()]||[];}
+function todayDone(){return (S.doneTasks||{})[today()]||[];}
 
 function checkStreak(){
   const t=today(),done=todayDone();
