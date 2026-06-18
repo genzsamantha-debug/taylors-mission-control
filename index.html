@@ -609,6 +609,13 @@ function completeTask(taskId,el){
     S.catCounts[task.cat]=(S.catCounts[task.cat]||0)+1;
     S.log.unshift({date:today(),name:task.name,pts:task.pts,cat:task.cat});
     if(S.log.length>100) S.log=S.log.slice(0,100);
+    // Flash checkmark in the circle then fade the row out before re-rendering
+    if(el){
+      const check=el.querySelector('.task-check');
+      if(check){check.textContent='✓';check.style.background='var(--green)';check.style.borderColor='var(--green)';}
+      el.style.transition='opacity 0.35s';
+      el.style.opacity='0';
+    }
     ptsFloat(el,'+'+task.pts+' XP');
     showEncourage();
     checkStreak();
@@ -618,7 +625,7 @@ function completeTask(taskId,el){
   }
   saveLocalBackup();
   schedulePush();
-  render();
+  setTimeout(()=>render(), el&&!done.includes(taskId)?400:0);
 }
 
 function addTaskCat(cat){
@@ -764,11 +771,12 @@ function renderTasks(){
     const body=block.querySelector('.cat-body');
     tasks.forEach(task=>{
       const isDone=done.includes(task.id);
+      if(isDone) return; // completed tasks disappear from the list
       const row=document.createElement('div');
-      row.className='task-row'+(isDone?' done':'');
-      row.innerHTML=`<div class="task-check">${isDone?'✓':''}</div>
+      row.className='task-row';
+      row.innerHTML=`<div class="task-check"></div>
         <div class="task-info"><div class="task-name">${task.name}</div></div>
-        <div class="task-pts">${isDone?'✓':'+'}${task.pts} XP</div>
+        <div class="task-pts">+${task.pts} XP</div>
         <button class="del-btn" onclick="event.stopPropagation();deleteTask('${task.id}')" title="Remove">&#x2715;</button>`;
       row.onclick=()=>completeTask(task.id,row);
       body.appendChild(row);
