@@ -565,16 +565,18 @@ function getRank(xp){return RANKS.find(r=>xp>=r.min&&xp<r.max)||RANKS[RANKS.leng
 function todayDone(){return (S.doneTasks||{})[today()]||[];}
 
 function checkStreak(){
+  S.streakDays=S.streakDays||[];
   const t=today(),done=todayDone();
   if(!done.length||S.streakDays.includes(t)) return;
   const y=new Date(); y.setDate(y.getDate()-1);
   const ys=y.toLocaleDateString('en-CA');
-  S.streak=(S.streakDays.includes(ys)||S.lastActiveDate===ys)?S.streak+1:1;
+  S.streak=(S.streakDays.includes(ys)||S.lastActiveDate===ys)?(S.streak||0)+1:1;
   S.lastActiveDate=t;
   if(!S.streakDays.includes(t)) S.streakDays.push(t);
 }
 
 function checkBadges(){
+  S.earnedBadges=S.earnedBadges||[];
   BADGES.forEach(b=>{
     if(!S.earnedBadges.includes(b.id)&&b.check(S)){
       S.earnedBadges.push(b.id);
@@ -625,7 +627,8 @@ function completeTask(taskId,el){
   }
   saveLocalBackup();
   schedulePush();
-  setTimeout(()=>render(), el&&!done.includes(taskId)?400:0);
+  // If completing (not un-completing), wait for fade animation before re-rendering
+  setTimeout(()=>render(), !wasDone?400:0);
 }
 
 function addTaskCat(cat){
